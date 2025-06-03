@@ -6,14 +6,14 @@ export default function Form(){
     const [ingredients,setIngredients] = React.useState([])
     
     const ingredientsList = ingredients.map((ingredient)=>{
-       return <li key={ingredient}>{ingredient}</li>
+       return <li className="list" key={ingredient}>{ingredient}</li>
     })
 
-    function handleSubmit(event){
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
+    function handleSubmit(formData){
         const newIngredient = formData.get("ingredient")
-        setIngredients(preValues=> [...preValues,newIngredient])
+        setIngredients(preValues=> [...ingredients,newIngredient])
+        
+
     }
 
     
@@ -21,7 +21,7 @@ export default function Form(){
     return(
         <main>
             <form 
-                onSubmit={handleSubmit}
+                action={handleSubmit}
                 className="form" >
             <input 
                 type="text"

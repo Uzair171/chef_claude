@@ -67,3 +67,7 @@ main{
 .form >button:hover{
     background-color: rgba(49, 49, 46, 0.888);
 }
+
+.list{
+    font-size: 1.2rem;
+}
