@@ -1,6 +1,10 @@
+import React from "react"
+
 export default function Form(){
 
-    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
+    
+    const [ingredients,setIngredients] = React.useState([])
+    
     const ingredientsList = ingredients.map((ingredient)=>{
        return <li key={ingredient}>{ingredient}</li>
     })
@@ -9,8 +13,7 @@ export default function Form(){
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient")
-        ingredients.push(newIngredient)
-        console.log(ingredients)
+        setIngredients(preValues=> [...preValues,newIngredient])
     }
 
     
