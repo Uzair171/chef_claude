@@ -1,5 +1,5 @@
 import React from "react"
-import ClaudeRecipe from "./claudieRecipe"
+import MistralRecipe from "./mistralRecipe"
 import IngredientsList from "./ingredientsList"
 import { preconnect } from "react-dom"
 import getRecipeFromMistral  from "../ai.js"
@@ -48,7 +48,7 @@ export default function Form(){
                 
             />
 
-            {recipe ? <ClaudeRecipe
+            {recipe ? <MistralRecipe
             recipe={recipe} 
             /> : null}
         </main>

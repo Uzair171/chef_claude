@@ -5,7 +5,7 @@ export default function Header(){
         <>
             <header className="header">
                 <img className ="chef-image" src="src/assets/chef-svgrepo-com.svg" alt="Chef Claude" />
-                <h2>Chef Claude</h2>
+                <h2>Chef Mistral</h2>
             </header>
         </>
     )
