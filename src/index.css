@@ -71,3 +71,36 @@ main{
 .list{
     font-size: 1.2rem;
 }
+
+.get-recipe-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(198, 204, 210);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    align-items: center;
+}
+
+.recipie-button{
+    height: 3rem;
+    width: 8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(243, 84, 84);
+    border: none;
+    border-radius: 0.6rem;
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover{
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+}
+
+.get-recipe-container >div>h3{
+    font-size: 1rem;
+}
+
+.get-recipe-container >div>p{
+    font-size: 0.7rem;
+}
