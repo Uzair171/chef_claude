@@ -2,6 +2,7 @@ import React from "react"
 import ClaudeRecipe from "./claudieRecipe"
 import IngredientsList from "./ingredientsList"
 import { preconnect } from "react-dom"
+import getRecipeFromMistral  from "../ai.js"
 
 export default function Form(){
 
@@ -19,10 +20,11 @@ export default function Form(){
 
     }
 
-    const [recipe, setRecipe] = React.useState(false)
+    const [recipe, setRecipe] = React.useState("")
 
-    function toggle(){
-        setRecipe((preValue)=> !preValue)
+    async function toggle() {
+        const recipeMarkdown = await getRecipeFromMistral(ingredients)
+        setRecipe(recipeMarkdown)
     }
 
     return(
@@ -46,7 +48,9 @@ export default function Form(){
                 
             />
 
-            {recipe ? <ClaudeRecipe/> : null}
+            {recipe ? <ClaudeRecipe
+            recipe={recipe} 
+            /> : null}
         </main>
     )
 };

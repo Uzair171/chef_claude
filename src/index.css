@@ -104,3 +104,7 @@ main{
 .get-recipe-container >div>p{
     font-size: 0.7rem;
 }
+
+ReactMarkdown{
+    font-size: 1rem;
+}
